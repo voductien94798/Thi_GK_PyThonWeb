@@ -1,0 +1,107 @@
+<style>
+  html,
+  body {
+    height: 100%;
+    background-color: #f6f6f6;
+  }
+  /* Thiết lập font chữ mặc định cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Thiết lập màu nền cho toàn bộ trang */
+  body {
+    background-color: #f6f6f6;
+  }
+  
+  /* Căn giữa nội dung trên trang */
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Thiết lập margin cho nội dung chính */
+  .col-sm-10 {
+    margin-top: 20px; /* Điều chỉnh khoảng cách giữa phần header và nội dung */
+  }
+  
+  /* Thiết lập màu nền và border-radius cho sidebar */
+  .bs-sliderbar {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* Thiết lập kiểu chữ cho danh sách menu */
+  .bs-sliderbar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Thiết lập margin cho mỗi mục trong danh sách menu */
+  .bs-sliderbar ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Thiết lập màu chữ cho các liên kết */
+  .bs-sliderbar ul li a {
+    color: #333333;
+    text-decoration: none;
+  }
+  
+  /* Thiết lập màu chữ khi di chuột qua các liên kết */
+  .bs-sliderbar ul li a:hover {
+    color: #007bff;
+  }
+  
+  /* Thiết lập phần footer */
+  footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Thiết lập màu chữ cho các liên kết trong footer */
+  footer a {
+    display: flex,
+    flex: flex
+    color: #333333;
+    text-decoration: none;
+  }
+  
+  
+  /* Thiết lập màu chữ khi di chuột qua các liên kết trong footer */
+  footer a:hover {
+    color: #007bff;
+  }
+  
+</style>
+<body>
+  <div class="container-fluid">
+    
+       
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="bs-sliderbar" style="background-color: #ffffff">
+          <ul class="nav flex-column">
+            <li><a href="">Thông tin cá nhân</a></li>
+            <li><a href="">Bài viết</a></li>
+            <li><a href="">Liên hệ</a></li>
+            <li><a href="/login/">Đăng nhập</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-10">{% block content %} {% endblock %}</div>
+    </div>
+    <footer>
+      <div class="container-fluid">
+        <a href="https://www.facebook.com/nguyentanquangg">Facebook</a> |
+        <a href="https://www.instagram.com/ntzz_code/">Instagram</a> |
+        <a href="tanquanga6k10@gmail.com">Google</a>
+      </div>
+    </footer>
+  </div>
+</body>

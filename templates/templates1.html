@@ -1,0 +1,11 @@
+{% extends "templates.html" %} 
+{% block title %}Blog{% endblock %} 
+{% block content %} 
+{% for NhatKy in NhatKys %}
+ <h4 > 
+    {{NhatKy.date|date:"d-m-Y"}} <a href="/{{NhatKy.id}}">{{NhatKy.title}}</a>
+</h4> 
+{% endfor %} 
+{% endblock %}
+
+
