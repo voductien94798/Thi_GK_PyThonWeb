@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .forms import RegistrationForm
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import logout
 # Create your views here.
 
 def list(request):
@@ -34,7 +35,10 @@ def login(request):
             else:
              
                 error_message = "Đăng nhập không hợp lệ. Vui lòng thử lại."
-                return render(request, '/templates3.html', {'form': form, 'error_message': error_message})
+                return render(request, 'templates3.html', {'form': form, 'error_message': error_message})
     else:
         form = LoginForm()
     return render(request, 'templates3.html', {'form': form})
+def logout_view(request):
+    logout(request)
+    return redirect('/login')

@@ -3,7 +3,7 @@
 {% block content %} 
 {% for NhatKy in NhatKys %}
  <h4 > 
-    {{NhatKy.date|date:"d-m-Y"}} <a href="/{{NhatKy.id}}">{{NhatKy.title}}</a>
+    {% comment %} {{NhatKy.date|date:"d-m-Y"}} <a href="/{{NhatKy.id}}">{{NhatKy.title}}</a> {% endcomment %}
 </h4> 
 {% endfor %} 
 {% endblock %}

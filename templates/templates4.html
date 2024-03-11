@@ -32,7 +32,6 @@
 
       input[type="text"],
       input[type="email"],
-
       input[type="password"],
       input[type="submit"] {
         width: 100%;
@@ -60,6 +59,7 @@
     <form action="." method="POST">
       {% csrf_token %} {{form.as_p}}
       <input type="submit" value="Đăng ký" />
+      <a href="/login">Đăng Nhập </a>
     </form>
   </body>
 </html>

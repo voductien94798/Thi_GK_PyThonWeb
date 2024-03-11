@@ -17,17 +17,19 @@ body {
   /* Căn giữa nội dung trên trang */
   .container-fluid {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+
   }
   
   /* Thiết lập margin cho nội dung chính */
   .col-sm-10 {
     margin-top: 20px; /* Điều chỉnh khoảng cách giữa phần header và nội dung */
   }
-  
   /* Thiết lập màu nền và border-radius cho sidebar */
   .bs-sliderbar {
+    display: flex;
+    flex-direction: row;
     background-color: #ffffff;
     border-radius: 5px;
     padding: 10px;
@@ -35,8 +37,11 @@ body {
   
   /* Thiết lập kiểu chữ cho danh sách menu */
   .bs-sliderbar ul {
+    display: flex;
+    flex-direction: row;
     list-style-type: none;
     padding: 0;
+    gap: 29px;
   }
   
   /* Thiết lập margin cho mỗi mục trong danh sách menu */
@@ -57,14 +62,13 @@ body {
   
   /* Thiết lập phần footer */
   footer {
+    
     margin-top: 20px;
     text-align: center;
   }
   
   /* Thiết lập màu chữ cho các liên kết trong footer */
   footer a {
-    display: flex,
-    flex: flex
     color: #333333;
     text-decoration: none;
   }
@@ -87,10 +91,15 @@ body {
       <div class="col-sm-2">
         <div class="bs-sliderbar" style="background-color: #ffffff">
           <ul class="nav flex-column">
-            <li><a href="">Thông tin cá nhân</a></li>
+            <li><a href="/aboutme">Thông tin cá nhân</a></li>
             <li><a href="">Bài viết</a></li>
-            <li><a href="">Liên hệ</a></li>
-            <li><a href="/login/">Đăng nhập</a></li>
+            <li><a href="/1">Blog</a></li>
+              {% if user.is_authenticated %}
+              <li><a href="#">Xin chào, {{ user.username }}</a></li>
+              <a href="{% url 'logout' %}">Đăng xuất</a>
+            {% else %}
+              <li><a href="/login/">Đăng nhập</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
